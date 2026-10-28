@@ -1,0 +1,35 @@
+{
+  "name": "dsh-identity-vault",
+  "version": "0.9.4-conversation.1",
+  "description": "统一DSH记忆插件：人物MCP与短期Skill调度、长期印象提炼、记忆可信度分级、记忆修订纠错及受管记忆后端。",
+  "type": "module",
+  "main": "./lib/host.mjs",
+  "exports": {
+    ".": "./lib/host.mjs",
+    "./store": "./lib/store.mjs",
+    "./compaction-gate": "./lib/billion-compaction-gate.mjs",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "dsh-identity-vault": "./bin/cli.mjs"
+  },
+  "files": [
+    "lib/*.mjs",
+    "lib/workers/fish-worker.mjs",
+    "bin/cli.mjs",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "peerDependencies": {
+    "billion-context": "*",
+    "dsh-fish-memory": "*"
+  }
+}

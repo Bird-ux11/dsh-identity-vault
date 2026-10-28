@@ -1,0 +1,23 @@
+- insert:
+    - id: bili-compaction-gate
+      name: dsh-identity-vault/compaction-gate
+    - id: identity-vault
+      name: dsh-identity-vault
+- id: preset-standard
+  inject: [biliBasicCompactionPolicy]
+- id: preset-ptc
+  inject: [biliBasicCompactionPolicy]
+- id: preset-minimal
+  inject: [biliBasicCompactionPolicy]
+- id: preset-cordis
+  inject: [biliBasicCompactionPolicy]
+- id: llm-deepseek
+  config:
+    retryPolicy:
+      mode: normal
+      retryableCodes: [EMPTY_RESPONSE, RATE_LIMIT, SERVER, TIMEOUT, TRANSPORT, MALFORMED_RESPONSE]
+- id: llm-deepseek-account
+  config:
+    retryPolicy:
+      mode: normal
+      retryableCodes: [EMPTY_RESPONSE, RATE_LIMIT, SERVER, TIMEOUT, TRANSPORT, MALFORMED_RESPONSE]
